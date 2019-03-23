@@ -1,0 +1,10 @@
+version: "2.1"
+services:
+  dhcp-server:
+    image: dhcp-server:latest
+    ports:
+      - "67:67/udp"
+    volumes:
+      - "/sys/fs/cgroup:/sys/fs/cgroup:ro"
+      - "/tmp/.dhcp-server:/run"
+    network_mode: "host"
